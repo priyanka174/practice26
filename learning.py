@@ -1,0 +1,21 @@
+from selenium.webdriver import Chrome
+from selenium.webdriver.support.select import Select
+path="C:/Users/User/PycharmProjects/pythonSelenium/drivers1/chromedriver.exe"
+driver=Chrome(executable_path=path)
+driver.get("https://www.thetestingworld.com/testings")
+driver.maximize_window()
+driver.find_element_by_name("fld_username").send_keys("priya")
+driver.find_element_by_xpath("//input[@placeholder='myusername@gmail.com']").send_keys("npriyanka3006@gmail.com")
+driver.find_element_by_xpath("//input[@placeholder='Password']").send_keys("12345678")
+driver.find_element_by_xpath("//input[@name='fld_cpassword']").send_keys("12345678")
+driver.find_element_by_xpath("//input[@name='dob']").send_keys("12/12/1998")
+driver.find_element_by_xpath("//input[@name='phone']").send_keys("7624963454")
+driver.find_element_by_xpath("//input[@name='dob']").send_keys("kolar")
+driver.find_element_by_xpath("//input[@name='add_type']").click()
+obj=Select (driver.find_element_by_name("sex"))
+obj.select_by_index(1)
+obj=Select(driver.find_element_by_name("country"))
+obj.select_by_visible_text("India")
+driver.find_element_by_name("zip").send_keys("563135")
+driver.find_element_by_name("terms").click()
+driver.find_element_by_xpath("//input[@type='submit']").click()
